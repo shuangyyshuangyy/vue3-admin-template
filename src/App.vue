@@ -19,10 +19,13 @@
       @current-change="handleCurrentChange"
     />
   </div>
+  <test></test>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Plus, Edit } from '@element-plus/icons-vue';
+import test from '@/components/test.vue';
+
 const currentPage4 = ref(4);
 const pageSize4 = ref(100);
 const small = ref(false);
