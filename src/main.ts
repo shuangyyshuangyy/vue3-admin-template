@@ -10,10 +10,15 @@ import 'virtual:svg-icons-register';
 import gloablComponent from '@/components/index.ts';
 import '@/styles/index.scss';
 
+import axios from 'axios';
+axios({
+  url: '/api/user/login',
+  method: 'post',
+  data: { username: 'admin', password: '1112111' },
+});
 const app = createApp(App);
 
-app.use(gloablComponent);
-app.use(ElementPlus, {
+app.use(gloablComponent).use(ElementPlus, {
   locale: zhCn,
 });
 app.mount('#app');
