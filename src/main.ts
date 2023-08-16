@@ -7,9 +7,11 @@ import 'element-plus/dist/index.css';
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 //svg插件需要配置代码
 import 'virtual:svg-icons-register';
+import gloablComponent from '@/components/index.ts';
+import '@/styles/index.scss';
 
 const app = createApp(App);
-import gloablComponent from './components/index.ts';
+
 app.use(gloablComponent);
 app.use(ElementPlus, {
   locale: zhCn,
