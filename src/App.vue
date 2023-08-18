@@ -3,7 +3,21 @@
   <div><h1>ssss</h1></div>
 </template>
 <script setup lang="ts">
-// import { ref } from "vue";
+import { onMounted } from 'vue';
+import request from '@/utils/request';
+
+onMounted(() => {
+  request({
+    url: '/user/login',
+    method: 'posts',
+    data: {
+      username: 'admin',
+      password: '111111',
+    },
+  }).then((res) => {
+    console.log(res);
+  });
+});
 </script>
 <style scoped lang="scss">
 div {
