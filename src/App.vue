@@ -4,18 +4,14 @@
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import request from '@/utils/request';
+import { reqLogin } from '@/api/user/index.ts';
 
 onMounted(() => {
-  request({
-    url: '/user/login',
-    method: 'posts',
-    data: {
-      username: 'admin',
-      password: '111111',
-    },
+  reqLogin({
+    username: 'admin',
+    password: '111111',
   }).then((res) => {
-    console.log(res);
+    console.log(res.data);
   });
 });
 </script>
