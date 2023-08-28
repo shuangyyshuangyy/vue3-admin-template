@@ -31,7 +31,9 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "components.d.ts"
+    "components.d.ts",
+    //让element-plus组件获得类型提示
+    "node_modules/element-plus/global.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
