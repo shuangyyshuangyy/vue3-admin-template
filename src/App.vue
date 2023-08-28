@@ -1,5 +1,6 @@
 <template>
   <router-view></router-view>
+  <svg-icon></svg-icon>
 </template>
 <script setup lang="ts">
 import { onMounted } from 'vue';
