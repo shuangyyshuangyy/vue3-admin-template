@@ -12,10 +12,11 @@ request.interceptors.request.use((config) => {
 
 request.interceptors.response.use(
   (response) => {
+    // console.log('response', response, 'response.data', response.data);
     return response.data;
   },
   (error) => {
-    console.log(error);
+    // console.log(error);
     let message = '';
     let status = error.response.status;
     switch (status) {

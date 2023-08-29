@@ -42,6 +42,7 @@ import { useUserStore } from '@/store/modules/use-user-store';
 import type { loginData } from '@/api/user/type';
 import { useRouter } from 'vue-router';
 import { ElNotification } from 'element-plus';
+import { getTime } from '@/utils/time';
 
 //收集表单信息
 const formState: loginData = reactive({
@@ -60,6 +61,7 @@ const Login = async () => {
     router.push('/');
     ElNotification({
       type: 'success',
+      title: `Hi,${getTime()}好`,
       message,
     });
   } catch (error) {

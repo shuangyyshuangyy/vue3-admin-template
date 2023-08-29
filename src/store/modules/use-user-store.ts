@@ -1,6 +1,6 @@
 //用户相关的小仓库
 import { defineStore } from 'pinia';
-import type { loginData } from '@/api/user/type';
+import type { loginData, loginResponse } from '@/api/user/type';
 import { reqLogin } from '@/api/user';
 
 export const useUserStore = defineStore('user', {
@@ -12,11 +12,11 @@ export const useUserStore = defineStore('user', {
 
   actions: {
     async login(data: loginData) {
-      const result = await reqLogin(data);
+      const result: loginResponse = await reqLogin(data);
       if (result.code === 200) {
-        this.token = result.data.token || '';
+        this.token = result.data.token as string;
         localStorage.setItem('TOKEN', this.token);
-        return '登录成功';
+        return '欢迎回来';
       } else {
         return Promise.reject(result.data.message);
       }
