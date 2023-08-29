@@ -5,7 +5,7 @@ import { reqLogin } from '@/api/user';
 
 export const useUserStore = defineStore('user', {
   state: () => ({
-    token: localStorage.getItem('TOKEN'),
+    token: '', //localStorage.getItem('TOKEN'),
   }),
 
   getters: {},
@@ -15,11 +15,12 @@ export const useUserStore = defineStore('user', {
       const result: loginResponse = await reqLogin(data);
       if (result.code === 200) {
         this.token = result.data.token as string;
-        localStorage.setItem('TOKEN', this.token);
+        // localStorage.setItem('TOKEN', this.token);
         return '欢迎回来';
       } else {
         return Promise.reject(result.data.message);
       }
     },
   },
+  persist: true,
 });

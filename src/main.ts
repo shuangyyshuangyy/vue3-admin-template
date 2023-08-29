@@ -11,8 +11,8 @@ import gloablComponent from '@/components/index.ts';
 import '@/styles/index.scss';
 import router from './router';
 import pinia from './store';
-const app = createApp(App);
 
+const app = createApp(App);
 app
   .use(gloablComponent)
   .use(ElementPlus, {
@@ -20,5 +20,6 @@ app
   })
   .use(router)
   .use(pinia);
+
 app.mount('#app');
 // console.log(import.meta.env);
