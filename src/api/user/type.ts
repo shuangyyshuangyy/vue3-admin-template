@@ -1,5 +1,5 @@
 //登录接口需要携带的参数类型
-export interface login {
+export interface loginData {
   username: string;
   password: string;
 }

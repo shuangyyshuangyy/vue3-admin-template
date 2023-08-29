@@ -10,7 +10,7 @@ import 'virtual:svg-icons-register';
 import gloablComponent from '@/components/index.ts';
 import '@/styles/index.scss';
 import router from './router';
-
+import pinia from './store';
 const app = createApp(App);
 
 app
@@ -18,6 +18,7 @@ app
   .use(ElementPlus, {
     locale: zhCn,
   })
-  .use(router);
+  .use(router)
+  .use(pinia);
 app.mount('#app');
 // console.log(import.meta.env);
