@@ -2,7 +2,7 @@
   <div class="container">
     <!-- pnpm add @vue/runtime-core 让element-plus组件获得类型提示 -->
     <el-row>
-      <el-col :span="12" :xs="0">{{ userStore.token }}</el-col>
+      <el-col :span="12" :xs="0" />
       <el-col :span="12" :xs="24">
         <el-form
           ref="loginFormRef"

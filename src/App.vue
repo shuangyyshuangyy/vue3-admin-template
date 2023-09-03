@@ -1,24 +1,6 @@
 <template>
+  <!-- 这里的 <router-view> 是一个顶层的 router-view。它渲染顶层路由匹配的组件 -->
   <router-view></router-view>
-  <svg-icon></svg-icon>
 </template>
-<script setup lang="ts">
-import { onMounted } from 'vue';
-import { reqLogin } from '@/api/user/index.ts';
-
-onMounted(() => {
-  reqLogin({
-    username: 'admin',
-    password: '111111',
-  }).then((res) => {
-    console.log(res.data);
-  });
-});
-</script>
-<style scoped lang="scss">
-div {
-  h1 {
-    color: $base-color;
-  }
-}
-</style>
+<script setup lang="ts"></script>
+<style scoped lang="scss"></style>

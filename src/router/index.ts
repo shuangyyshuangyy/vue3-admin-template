@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior(
-    //在变量名前加上下划线，表示这个变量是有意未使用的
+    //在变量名前加下划线，表示这个变量是有意未使用的
     //即将进入的路由
     _to: any,
     //当前离开的路由

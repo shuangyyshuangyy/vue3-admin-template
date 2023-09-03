@@ -2,10 +2,12 @@
 import { defineStore } from 'pinia';
 import type { loginData, loginResponse } from '@/api/user/type';
 import { reqLogin } from '@/api/user';
+import { routes } from '@/router/routes';
 
 export const useUserStore = defineStore('user', {
   state: () => ({
-    token: '', //localStorage.getItem('TOKEN'),
+    token: '',
+    routes,
   }),
 
   getters: {},
@@ -15,7 +17,6 @@ export const useUserStore = defineStore('user', {
       const result: loginResponse = await reqLogin(data);
       if (result.code === 200) {
         this.token = result.data.token as string;
-        // localStorage.setItem('TOKEN', this.token);
         return '欢迎回来';
       } else {
         return Promise.reject(result.data.message);
