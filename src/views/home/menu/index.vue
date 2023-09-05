@@ -5,6 +5,8 @@
       background-color="transparent"
       text-color="black"
       active-text-color="yellowgreen"
+      :default-active="route.path"
+      :default-openeds="unfoldMenuIndexArr"
       router
     >
       <!--根据路由动态生成菜单-->
@@ -36,7 +38,18 @@
   </el-scrollbar>
 </template>
 <script setup lang="ts">
+//  递归组件得引入
+import { useRoute } from 'vue-router';
 import Menu from './index.vue';
+import { reactive } from 'vue';
+
 defineProps(['menuList']);
+const route = useRoute();
+// console.log('route', route, route.path);
+const unfoldMenuIndexArr = reactive<string[]>([]);
+route.path.split('/').forEach((item) => {
+  if (item) unfoldMenuIndexArr.push('/' + item);
+});
+// console.log('unfoldMenuIndexArr', unfoldMenuIndexArr);
 </script>
 <style scoped></style>

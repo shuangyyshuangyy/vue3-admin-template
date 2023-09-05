@@ -40,7 +40,7 @@ export const routes = [
     // 要将组件渲染到这个嵌套的 router-view 中，我们需要在路由中配置 children
     children: [
       {
-        //以‘/’开头的路径将被视为根路径
+        //以‘/’开头的路径将被视为根路径，这里用相对路径有bug
         path: '/access-control/user',
         component: () => import('@/views/access-control/user/index.vue'),
         name: 'user',
