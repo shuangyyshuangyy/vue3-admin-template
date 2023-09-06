@@ -8,6 +8,7 @@
       :default-active="route.path"
       :default-openeds="unfoldMenuIndexArr"
       router
+      :collapse="navStore.foldFlag"
     >
       <!--根据路由动态生成菜单-->
       <template v-for="item in menuList" :key="item.path">
@@ -42,6 +43,7 @@
 import { useRoute } from 'vue-router';
 import Menu from './index.vue';
 import { reactive } from 'vue';
+import { useNavStore } from '@/store/modules/use-nav-store';
 
 defineProps(['menuList']);
 const route = useRoute();
@@ -51,5 +53,12 @@ route.path.split('/').forEach((item) => {
   if (item) unfoldMenuIndexArr.push('/' + item);
 });
 // console.log('unfoldMenuIndexArr', unfoldMenuIndexArr);
+
+const navStore = useNavStore();
 </script>
-<style scoped></style>
+<style scoped lang="scss">
+.scrollbar {
+  width: 100%;
+  height: calc(100vh - $menu-logo-height);
+}
+</style>
