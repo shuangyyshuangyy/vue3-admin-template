@@ -5,6 +5,7 @@ export const routes = [
     name: 'login',
     meta: {
       title: '登录',
+      //在菜单栏是否需要展示路由
       hidden: true,
     },
   },
@@ -37,6 +38,7 @@ export const routes = [
       hidden: false,
       icon: 'Lock',
     },
+    redirect: '/access-control/user',
     // 要将组件渲染到这个嵌套的 router-view 中，我们需要在路由中配置 children
     children: [
       {
@@ -78,6 +80,7 @@ export const routes = [
       hidden: false,
       icon: 'ShoppingCart',
     },
+    redirect: '/product/trademark',
     children: [
       {
         path: '/product/trademark',

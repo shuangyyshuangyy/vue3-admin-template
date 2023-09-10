@@ -59,6 +59,7 @@ const navStore = useNavStore();
 <style scoped lang="scss">
 .scrollbar {
   width: 100%;
-  height: calc(100vh - $menu-logo-height);
+  // 不能给高度，会出问题
+  // height: calc(100vh - $menu-logo-height);
 }
 </style>
