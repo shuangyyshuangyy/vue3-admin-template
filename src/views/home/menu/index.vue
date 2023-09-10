@@ -42,7 +42,6 @@
 //  递归组件得引入
 import { useRoute } from 'vue-router';
 import Menu from './index.vue';
-import { reactive } from 'vue';
 import { useNavStore } from '@/store/modules/use-nav-store';
 
 defineProps(['menuList']);

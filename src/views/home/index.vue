@@ -18,9 +18,9 @@
 </template>
 <script setup lang="ts">
 import { useNavStore } from '@/store/modules/use-nav-store';
-import { useUserStore } from '@/store/modules/use-user-store';
-const userStore = useUserStore();
-const menuList = userStore.routes.filter((item) => item.meta.hidden === false);
+import { routes } from '@/router/routes';
+
+const menuList = routes.filter((item) => item.meta.hidden === false);
 const navStore = useNavStore();
 </script>
 <style scoped lang="scss">

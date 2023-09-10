@@ -42,7 +42,6 @@
 
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue';
-import { reactive, ref } from 'vue';
 import { useUserStore } from '@/store/modules/use-user-store';
 import type { loginData } from '@/api/user/type';
 import { useRouter } from 'vue-router';
