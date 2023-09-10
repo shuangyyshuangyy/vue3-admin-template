@@ -61,9 +61,9 @@ export const routes = [
         },
       },
       {
-        path: '/access-control/menu',
-        component: () => import('@/views/access-control/menu/index.vue'),
-        name: 'menu',
+        path: '/access-control/menu-manage',
+        component: () => import('@/views/access-control/menu-manage/index.vue'),
+        name: 'menu-manage',
         meta: {
           title: '菜单管理',
           icon: 'Menu',

@@ -8,10 +8,7 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
-import TopNavLeft from './top-nav-left/index.vue';
-import TopNavRight from './top-nav-right/index.vue';
-</script>
+<script setup lang="ts"></script>
 <style scoped lang="scss">
 .top-nav {
   width: 100%;

@@ -23,7 +23,6 @@
 <script setup lang="ts">
 import { useNavStore } from '@/store/modules/use-nav-store';
 import { useRoute } from 'vue-router';
-// import { ref } from 'vue';
 const navStore = useNavStore();
 const handleClick = () => {
   navStore.foldFlag = !navStore.foldFlag;

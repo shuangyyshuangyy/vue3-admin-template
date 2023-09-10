@@ -18,10 +18,6 @@
 </template>
 <script setup lang="ts">
 import { useNavStore } from '@/store/modules/use-nav-store';
-import Logo from './logo/index.vue';
-import Main from './main/index.vue';
-import Menu from './menu/index.vue';
-import TopNav from './top-nav/index.vue';
 import { useUserStore } from '@/store/modules/use-user-store';
 const userStore = useUserStore();
 const menuList = userStore.routes.filter((item) => item.meta.hidden === false);
