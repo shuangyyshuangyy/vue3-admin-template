@@ -1,5 +1,5 @@
 <template>
-  <h1>menu</h1>
+  <h1>MenuManage</h1>
 </template>
 <script setup lang="ts">
 // import { ref } from "vue";

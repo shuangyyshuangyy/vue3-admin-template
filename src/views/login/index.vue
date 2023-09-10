@@ -46,7 +46,7 @@ import { reactive, ref } from 'vue';
 import { useUserStore } from '@/store/modules/use-user-store';
 import type { loginData } from '@/api/user/type';
 import { useRouter } from 'vue-router';
-import { ElNotification, FormRules } from 'element-plus';
+import { FormRules } from 'element-plus';
 import { getTime } from '@/utils/time';
 
 //收集表单信息
@@ -123,6 +123,7 @@ const Login = async () => {
   try {
     let message = await userStore.login(formState);
     router.push('/');
+
     ElNotification({
       type: 'success',
       title: `Hi,${getTime()}好`,
