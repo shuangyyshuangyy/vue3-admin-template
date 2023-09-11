@@ -6,6 +6,7 @@ import gloablComponent from '@/components/index.ts';
 import '@/styles/index.scss';
 import router from './router';
 import pinia from './store';
+import 'animate.css';
 
 const app = createApp(App);
 app.use(gloablComponent).use(router).use(pinia);
