@@ -1,5 +1,10 @@
 <template>
-  <el-button size="small" icon="Refresh" circle />
+  <el-button
+    size="small"
+    icon="Refresh"
+    circle
+    @click="() => navStore.refresh++"
+  />
   <el-button size="small" icon="FullScreen" circle />
   <el-button size="small" icon="Setting" circle />
   <el-dropdown style="margin: 15px">
@@ -16,5 +21,9 @@
     </template>
   </el-dropdown>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useNavStore } from '@/store/modules/use-nav-store';
+
+const navStore = useNavStore();
+</script>
 <style scoped></style>
