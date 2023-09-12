@@ -5,7 +5,7 @@
     circle
     @click="() => navStore.refresh++"
   />
-  <el-button size="small" icon="FullScreen" circle />
+  <el-button size="small" icon="FullScreen" circle @click="handleFullScreen" />
   <el-button size="small" icon="Setting" circle />
   <el-dropdown style="margin: 15px">
     <span>
@@ -25,5 +25,13 @@
 import { useNavStore } from '@/store/modules/use-nav-store';
 
 const navStore = useNavStore();
+
+const handleFullScreen = () => {
+  const fullScreenEl = document.fullscreenElement;
+  // console.log('fullSceenEl', fullScreenEl);
+  fullScreenEl
+    ? document.exitFullscreen()
+    : document.documentElement.requestFullscreen();
+};
 </script>
 <style scoped></style>
