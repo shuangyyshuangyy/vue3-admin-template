@@ -1,5 +1,7 @@
+import { useUserStore } from '@/store/modules/use-user-store';
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
+
 //request与axios都是axios实例，只是request多了一些配置
 const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
@@ -7,6 +9,9 @@ const request = axios.create({
 });
 
 request.interceptors.request.use((config) => {
+  //携带token
+  const userStore = useUserStore();
+  if (userStore.token) config.headers.token = userStore.token;
   return config;
 });
 

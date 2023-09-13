@@ -5,7 +5,7 @@
       background-color="transparent"
       text-color="black"
       active-text-color="yellowgreen"
-      :default-active="route.path"
+      :default-active="$route.path"
       :default-openeds="unfoldMenuIndexArr"
       router
       :collapse="navStore.foldFlag"
@@ -45,10 +45,10 @@ import Menu from './index.vue';
 import { useNavStore } from '@/store/modules/use-nav-store';
 
 defineProps(['menuList']);
-const route = useRoute();
+const $route = useRoute();
 // console.log('route', route, route.path);
 const unfoldMenuIndexArr = reactive<string[]>([]);
-route.path.split('/').forEach((item) => {
+$route.path.split('/').forEach((item) => {
   if (item) unfoldMenuIndexArr.push('/' + item);
 });
 // console.log('unfoldMenuIndexArr', unfoldMenuIndexArr);

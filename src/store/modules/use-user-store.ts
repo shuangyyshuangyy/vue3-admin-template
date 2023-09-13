@@ -1,11 +1,17 @@
 //用户相关的小仓库
 import { defineStore } from 'pinia';
-import type { loginData, loginResponse } from '@/api/user/type';
-import { reqLogin } from '@/api/user';
+import type {
+  loginData,
+  loginResponse,
+  userInfoResponse,
+} from '@/api/user/type';
+import { reqLogin, reqUserInfo } from '@/api/user';
 
 export const useUserStore = defineStore('user', {
   state: () => ({
     token: '',
+    username: '',
+    avatar: '',
   }),
 
   getters: {},
@@ -19,6 +25,20 @@ export const useUserStore = defineStore('user', {
       } else {
         return Promise.reject(result.data.message);
       }
+    },
+
+    async getUserInfo() {
+      const result: userInfoResponse = await reqUserInfo();
+      if (result.code === 200) {
+        this.username = result.data.checkUser?.username as string;
+        this.avatar = result.data.checkUser?.avatar as string;
+      }
+    },
+
+    userLogout() {
+      this.token = '';
+      this.username = '';
+      this.avatar = '';
     },
   },
   //当state中的值发生改变时，localStorage或sessionStorage才会更新

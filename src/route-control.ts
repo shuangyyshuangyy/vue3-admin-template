@@ -3,6 +3,7 @@ import 'nprogress/nprogress.css';
 import setting from './setting';
 import router from './router';
 
+//取消旋转圆圈
 nprogress.configure({ showSpinner: false });
 
 router.beforeEach((to, from, next) => {

@@ -44,7 +44,7 @@
 import { User, Lock } from '@element-plus/icons-vue';
 import { useUserStore } from '@/store/modules/use-user-store';
 import type { loginData } from '@/api/user/type';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { FormRules } from 'element-plus';
 import { getTime } from '@/utils/time';
 
@@ -94,7 +94,8 @@ const formRules = reactive<FormRules>({
   ],
 });
 
-const router = useRouter(); //获取路由器
+const $router = useRouter(); //获取路由器
+const $route = useRoute();
 const userStore = useUserStore();
 const loading = ref<boolean>(false);
 const loginFormRef = ref();
@@ -121,7 +122,9 @@ const Login = async () => {
   loading.value = true;
   try {
     let message = await userStore.login(formState);
-    router.push('/');
+    //redirect指出退出登录时的页面
+    const redirect = $route.query.redirect as string;
+    $router.push({ path: redirect || '/' });
 
     ElNotification({
       type: 'success',
