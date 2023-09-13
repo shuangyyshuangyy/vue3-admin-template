@@ -41,9 +41,9 @@ export const useUserStore = defineStore('user', {
       this.avatar = '';
     },
   },
-  //当state中的值发生改变时，localStorage或sessionStorage才会更新
-  persist: true,
-  // persist: {
-  //   storage: sessionStorage,
-  // },
+  //当state中的值发生改变时，localStorage或sessionStorage才会更新,默认会保存到localStorage
+  // persist: true,
+  persist: {
+    storage: sessionStorage,
+  },
 });
