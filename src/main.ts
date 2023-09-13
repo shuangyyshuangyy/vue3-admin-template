@@ -7,6 +7,8 @@ import '@/styles/index.scss';
 import router from './router';
 import pinia from './store';
 import 'animate.css';
+//路由鉴权
+import './route-control';
 
 const app = createApp(App);
 app.use(gloablComponent).use(router).use(pinia);
