@@ -1,6 +1,9 @@
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
+import setting from './setting';
 import router from './router';
+
+nprogress.configure({ showSpinner: false });
 
 router.beforeEach((to, from, next) => {
   // to and from are both route objects. must call `next`.
@@ -10,4 +13,5 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
   // to and from are both route objects.
   nprogress.done();
+  document.title = setting.title + '-' + to.meta.title;
 });

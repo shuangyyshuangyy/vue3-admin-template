@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- 左侧菜单 -->
-    <div class="leftMenu" :class="{ leftFold: navStore.foldFlag }">
+    <div class="left" :class="{ leftFold: navStore.foldFlag }">
       <Logo></Logo>
       <Menu :menuList="menuList"></Menu>
     </div>
@@ -30,8 +30,8 @@ const navStore = useNavStore();
   width: 100%;
   height: 100vh;
   // background: pink;
-  .leftMenu {
-    width: $left-menu-width;
+  .left {
+    width: $left-width;
     height: 100%;
     background: rgba(233, 250, 247, 0.918);
     transition: all 0.5s;
@@ -40,7 +40,7 @@ const navStore = useNavStore();
     }
   }
   .right {
-    width: calc(100% - $left-menu-width);
+    width: calc(100% - $left-width);
     height: 100vh;
     .top {
       width: 100%;

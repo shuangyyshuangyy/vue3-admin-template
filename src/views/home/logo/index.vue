@@ -14,7 +14,7 @@ const navStore = useNavStore();
 <style scoped lang="scss">
 .logo {
   width: 100%;
-  height: $menu-logo-height;
+  height: $logo-height;
   color: #0c0b0bf6;
   display: flex;
   align-items: center;
