@@ -51,7 +51,7 @@ import { getTime } from '@/utils/time';
 //收集表单信息
 const formState: loginData = reactive({
   username: 'admin',
-  password: '111111',
+  password: 'atguigu123',
 });
 
 //自定义校验password规则

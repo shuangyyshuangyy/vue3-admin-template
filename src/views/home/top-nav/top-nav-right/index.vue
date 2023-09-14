@@ -44,8 +44,8 @@ const handleFullScreen = () => {
 
 const $router = useRouter();
 const $route = useRoute();
-const logout = () => {
-  userStore.userLogout();
+const logout = async () => {
+  await userStore.userLogout();
   //redirect保存退出登录时的路由路径
   $router.push({ path: '/login', query: { redirect: $route.path } });
 };
